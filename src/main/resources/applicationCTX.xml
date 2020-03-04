@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+	
+	<bean id="bmiCalculator" class="com.javalec.ex.BMICalculator">
+		<property name="lowWeight" value="18.5"/>
+		<property name="normal" value="23"/>
+		<property name="overWeight" value="25"/>
+		<property name="obesity" value="30"/>
+	</bean>
+	
+	<bean id="myInfo" class="com.javalec.ex.MyInfo">
+		<property name="name" value="휘"/>
+		<property name="height" value="169"/>
+		<property name="weight" value="68"/>
+		<property name="hobby">
+			<list>
+				<value>수영</value>
+				<value>영화</value>
+				<value>코딩</value>
+			</list>
+		</property>
+		<property name="bmiCalculator">
+			<ref bean="bmiCalculator"/>
+		</property>
+	</bean>
+	
+	
+
+</beans>
